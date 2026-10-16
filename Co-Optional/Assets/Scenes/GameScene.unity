@@ -1931,6 +1931,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -1229847485172728619, guid: 0d813fa26ac4fa24889ecc38506d5edd, type: 3}
+      propertyPath: m_InScenePlaced
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1229847485172728619, guid: 0d813fa26ac4fa24889ecc38506d5edd, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 420452861
+      objectReference: {fileID: 0}
+    - target: {fileID: -1229847485172728619, guid: 0d813fa26ac4fa24889ecc38506d5edd, type: 3}
+      propertyPath: SceneMigrationSynchronization
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1229847485172728619, guid: 0d813fa26ac4fa24889ecc38506d5edd, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 729170229
+      objectReference: {fileID: 0}
     - target: {fileID: 2797376856292171619, guid: 0d813fa26ac4fa24889ecc38506d5edd, type: 3}
       propertyPath: m_Name
       value: pickaxe
@@ -2170,6 +2186,22 @@ PrefabInstance:
     - target: {fileID: -1926054152944378366, guid: 0f593c205eb9e5a48825e85731d1f215, type: 3}
       propertyPath: GlobalObjectIdHash
       value: 1224988709
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340273116122064423, guid: 0f593c205eb9e5a48825e85731d1f215, type: 3}
+      propertyPath: m_InScenePlaced
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340273116122064423, guid: 0f593c205eb9e5a48825e85731d1f215, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 3758004919
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340273116122064423, guid: 0f593c205eb9e5a48825e85731d1f215, type: 3}
+      propertyPath: SceneMigrationSynchronization
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6340273116122064423, guid: 0f593c205eb9e5a48825e85731d1f215, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 2519335280
       objectReference: {fileID: 0}
     - target: {fileID: 7150301565930258685, guid: 0f593c205eb9e5a48825e85731d1f215, type: 3}
       propertyPath: m_Name
@@ -2678,9 +2710,9 @@ MonoBehaviour:
   Ownership: 1
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
-  m_InScenePlaced: 0
+  m_InScenePlaced: 1
   ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
+  SceneMigrationSynchronization: 0
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
