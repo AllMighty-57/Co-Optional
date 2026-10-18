@@ -542,6 +542,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 720351026}
     m_Modifications:
+    - target: {fileID: -3439597502325990112, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: m_InScenePlaced
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3439597502325990112, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2679169169
+      objectReference: {fileID: 0}
+    - target: {fileID: -3439597502325990112, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: SceneMigrationSynchronization
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3439597502325990112, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1211392204
+      objectReference: {fileID: 0}
+    - target: {fileID: 165762103241445688, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: Components.Array.data[0].name
+      value: Tree (2) (Capsule Collider)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165762103241445688, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: Components.Array.data[1].name
+      value: Tree (2) (Mesh Renderer)
+      objectReference: {fileID: 0}
     - target: {fileID: 1499640022579214996, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.4779177
@@ -1751,6 +1775,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 720351026}
     m_Modifications:
+    - target: {fileID: -1448676097397120437, guid: 28ea3d07c5fa049479b7b6f4f3acc6c8, type: 3}
+      propertyPath: m_InScenePlaced
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1448676097397120437, guid: 28ea3d07c5fa049479b7b6f4f3acc6c8, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1305136891
+      objectReference: {fileID: 0}
+    - target: {fileID: -1448676097397120437, guid: 28ea3d07c5fa049479b7b6f4f3acc6c8, type: 3}
+      propertyPath: SceneMigrationSynchronization
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1448676097397120437, guid: 28ea3d07c5fa049479b7b6f4f3acc6c8, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 2988365521
+      objectReference: {fileID: 0}
     - target: {fileID: 3563353031477923501, guid: 28ea3d07c5fa049479b7b6f4f3acc6c8, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -1768,6 +1808,14 @@ PrefabInstance:
       value: Rock (1) (Capsule Collider)
       objectReference: {fileID: 0}
     - target: {fileID: 5127384196278506619, guid: 28ea3d07c5fa049479b7b6f4f3acc6c8, type: 3}
+      propertyPath: Components.Array.data[1].name
+      value: Rock (1) (Mesh Renderer)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6204522249626441974, guid: 28ea3d07c5fa049479b7b6f4f3acc6c8, type: 3}
+      propertyPath: Components.Array.data[0].name
+      value: Rock (1) (Capsule Collider)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6204522249626441974, guid: 28ea3d07c5fa049479b7b6f4f3acc6c8, type: 3}
       propertyPath: Components.Array.data[1].name
       value: Rock (1) (Mesh Renderer)
       objectReference: {fileID: 0}
@@ -1845,6 +1893,30 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 720351026}
     m_Modifications:
+    - target: {fileID: -3439597502325990112, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: m_InScenePlaced
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3439597502325990112, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 2319630072
+      objectReference: {fileID: 0}
+    - target: {fileID: -3439597502325990112, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: SceneMigrationSynchronization
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3439597502325990112, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1211392204
+      objectReference: {fileID: 0}
+    - target: {fileID: 165762103241445688, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: Components.Array.data[0].name
+      value: Tree (1) (Capsule Collider)
+      objectReference: {fileID: 0}
+    - target: {fileID: 165762103241445688, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: Components.Array.data[1].name
+      value: Tree (1) (Mesh Renderer)
+      objectReference: {fileID: 0}
     - target: {fileID: 1499640022579214996, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.75
@@ -2599,6 +2671,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 720351026}
     m_Modifications:
+    - target: {fileID: -1448676097397120437, guid: 28ea3d07c5fa049479b7b6f4f3acc6c8, type: 3}
+      propertyPath: m_InScenePlaced
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -1448676097397120437, guid: 28ea3d07c5fa049479b7b6f4f3acc6c8, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1576254956
+      objectReference: {fileID: 0}
+    - target: {fileID: -1448676097397120437, guid: 28ea3d07c5fa049479b7b6f4f3acc6c8, type: 3}
+      propertyPath: SceneMigrationSynchronization
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -1448676097397120437, guid: 28ea3d07c5fa049479b7b6f4f3acc6c8, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 2988365521
+      objectReference: {fileID: 0}
     - target: {fileID: 3563353031477923501, guid: 28ea3d07c5fa049479b7b6f4f3acc6c8, type: 3}
       propertyPath: m_IsTrigger
       value: 0
@@ -2616,6 +2704,14 @@ PrefabInstance:
       value: Rock (Capsule Collider)
       objectReference: {fileID: 0}
     - target: {fileID: 5127384196278506619, guid: 28ea3d07c5fa049479b7b6f4f3acc6c8, type: 3}
+      propertyPath: Components.Array.data[1].name
+      value: Rock (Mesh Renderer)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6204522249626441974, guid: 28ea3d07c5fa049479b7b6f4f3acc6c8, type: 3}
+      propertyPath: Components.Array.data[0].name
+      value: Rock (Capsule Collider)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6204522249626441974, guid: 28ea3d07c5fa049479b7b6f4f3acc6c8, type: 3}
       propertyPath: Components.Array.data[1].name
       value: Rock (Mesh Renderer)
       objectReference: {fileID: 0}
@@ -2816,6 +2912,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 720351026}
     m_Modifications:
+    - target: {fileID: -3439597502325990112, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: m_InScenePlaced
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: -3439597502325990112, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1137144169
+      objectReference: {fileID: 0}
+    - target: {fileID: -3439597502325990112, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: SceneMigrationSynchronization
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: -3439597502325990112, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
+      propertyPath: InScenePlacedSourceGlobalObjectIdHash
+      value: 1211392204
+      objectReference: {fileID: 0}
     - target: {fileID: 1499640022579214996, guid: e4d3a6a6b3552c346994ddb69543052c, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.522009
