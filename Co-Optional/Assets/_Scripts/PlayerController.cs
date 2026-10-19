@@ -21,8 +21,15 @@ public class PlayerController : NetworkBehaviour
     [SerializeField]
     private GameObject m_axeModel, m_pickaxeModel, m_woodModel, m_stoneModel;
 
+    private ResourceSpawner m_resourceSpawner;
+
     private NetworkVariable<ulong> m_heldNetworkObjectId = new(ulong.MaxValue);
     private NetworkVariable<ObjectType> m_heldObjectType = new(ObjectType.None);
+
+    private void Awake()
+    {
+        m_resourceSpawner = FindAnyObjectByType<ResourceSpawner>();
+    }
 
     private void OnEnable()
     {
@@ -124,8 +131,32 @@ public class PlayerController : NetworkBehaviour
             RequestPickUpServerRpc(
                 m_interactionDetector.ClosestInteractable.NetworkObject.NetworkObjectId);
         }
+        if (m_interactionDetector.ClosestInteractable is ResourcePallet)
+        {
+            RequestGiveItemServerRpc(
+                m_interactionDetector.ClosestInteractable.NetworkObject.NetworkObjectId);
+        }
     }
     
+    [Rpc(SendTo.Server)]
+    private void RequestGiveItemServerRpc(ulong networkObjectId)
+    {
+        if (!NetworkManager.SpawnManager.SpawnedObjects
+            .TryGetValue(networkObjectId, out NetworkObject target))
+        {
+            return;
+        }
+        if (!target.TryGetComponent(out ResourcePallet resourcePallet))
+        {
+            return;
+        } 
+        if(resourcePallet.Interact(m_heldObjectType.Value))
+        {
+            m_heldObjectType.Value = ObjectType.None;
+            m_heldNetworkObjectId.Value = ulong.MaxValue;
+        }
+    }
+
     [Rpc(SendTo.Server)]
     private void RequestPickUpServerRpc(ulong networkObjectId)
     {
@@ -177,8 +208,12 @@ public class PlayerController : NetworkBehaviour
                 }
             }
         }
+        else
+        {
+            m_resourceSpawner.SpawnResource(m_heldObjectType.Value, transform.position);
+        }
 
-        m_heldObjectType.Value = ObjectType.None;
+            m_heldObjectType.Value = ObjectType.None;
         m_heldNetworkObjectId.Value = ulong.MaxValue;
     }
 

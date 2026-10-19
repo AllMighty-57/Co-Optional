@@ -2,7 +2,6 @@ using UnityEngine;
 using Unity.Netcode;
 using UnityEngine.InputSystem;
 using System;
-using UnityEditor.Rendering;
 
 public class PlayerInput : NetworkBehaviour
 {
