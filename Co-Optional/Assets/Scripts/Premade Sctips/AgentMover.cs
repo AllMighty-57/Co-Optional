@@ -12,9 +12,9 @@ public class AgentMover : MonoBehaviour
     private Animator m_animator;
 
     [SerializeField]
-    private float m_movementSpeed = 4f;
+    private float m_movementSpeed = 6f;
     [SerializeField]
-    private float m_rotationSpeed = 200f;
+    private float m_rotationSpeed = 250f;
 
     public void Move(Vector2 movementInput)
     {
