@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using Unity.Netcode.Components;
 using UnityEngine;
+ 
+// handle logistis of resources (sounds, playing hit animation, spawning resources)
 
 public class ResourceNode : NetworkBehaviour, IInteractable
 {

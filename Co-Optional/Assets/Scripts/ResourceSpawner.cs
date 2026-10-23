@@ -1,6 +1,8 @@
 using Unity.Netcode;
 using UnityEngine;
 
+// handles actual spawning of items
+
 public class ResourceSpawner : NetworkBehaviour
 {
     [SerializeField] private NetworkObject m_woodPrefab, m_stonePrefab;
