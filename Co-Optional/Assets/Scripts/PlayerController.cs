@@ -19,7 +19,7 @@ public class PlayerController : NetworkBehaviour
 
     private bool m_isInteracting, m_isChopping;
     [SerializeField]
-    private GameObject m_axeModel, m_pickaxeModel, m_woodModel, m_stoneModel;
+    private GameObject m_axeModel, m_pickaxeModel, m_woodModel, m_stoneModel, m_crateModel;
 
     private ResourceSpawner m_resourceSpawner;
 
@@ -35,7 +35,26 @@ public class PlayerController : NetworkBehaviour
     {
         m_playerInput.OnPickupPressed += HandlePickUpPressed;
         m_playerInput.OnInteractPressed += HandleActionPressed;
+        m_playerInput.OnDropPressed += HandleDropPressed;
     }
+
+    private void HandleDropPressed()
+    {
+        if (m_isInteracting || m_isChopping)
+            return;
+        if(m_heldObjectType.Value == ObjectType.None) 
+            return;
+
+        RequestDropCurrentItemServerRpc();
+
+    }
+
+    [Rpc(SendTo.Server)]
+    private void RequestDropCurrentItemServerRpc()
+    {
+        DropCurrentItem();
+    }
+
     private void HandlePickUpPressed()
     {
         if(m_isInteracting || m_isChopping)
@@ -50,6 +69,7 @@ public class PlayerController : NetworkBehaviour
     {
         m_playerInput.OnPickupPressed -= HandlePickUpPressed;
         m_playerInput.OnInteractPressed -= HandleActionPressed;
+        m_playerInput.OnDropPressed -= HandleDropPressed;
     }
 
     private void HandleActionPressed()
@@ -117,7 +137,8 @@ public class PlayerController : NetworkBehaviour
         m_axeModel.SetActive(newValue == ObjectType.Axe);
         m_pickaxeModel.SetActive(newValue == ObjectType.PickAxe);
         m_woodModel.SetActive(newValue == ObjectType.Wood);
-        m_stoneModel.SetActive(newValue == ObjectType.Stone);
+        m_stoneModel.SetActive(newValue == ObjectType.Stone); 
+        m_crateModel.SetActive(newValue == ObjectType.Crate);
     }
     private void HandleAnimationDone()
     {
@@ -197,7 +218,7 @@ public class PlayerController : NetworkBehaviour
             return;
         }
 
-        if (m_heldObjectType.Value is ObjectType.Axe or ObjectType.PickAxe)
+        if (m_heldObjectType.Value is ObjectType.Axe or ObjectType.PickAxe or ObjectType.Crate)
         {
             if (NetworkManager.SpawnManager.SpawnedObjects.TryGetValue(
                 m_heldNetworkObjectId.Value, out NetworkObject target))

@@ -21,7 +21,7 @@ public class PickableTool : PickableBase
         {
             return;
         }
-        transform.position = new Vector3(position.x, transform.position.y, position.z);
+        transform.position = new Vector3(position.x, transform.position.y, position.z + 2);
         m_isAvailable.Value = true;
         
     }

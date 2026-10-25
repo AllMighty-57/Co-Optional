@@ -350,11 +350,12 @@ GameObject:
   - component: {fileID: 4956387030774660574}
   - component: {fileID: 4948312187332645356}
   - component: {fileID: 2240937754022350067}
-  - component: {fileID: -5316913461067256539}
   - component: {fileID: 5078954791202937250}
+  - component: {fileID: -5316913461067256539}
+  - component: {fileID: -8990631762363941885}
   m_Layer: 0
   m_Name: Crate
-  m_TagString: Untagged
+  m_TagString: Crate
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -492,6 +493,31 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
+--- !u!114 &5078954791202937250
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2629982952932842826}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d0b25b3f95e5324abc80c09cb29f271, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.Components.ComponentController
+  ShowTopMostFoldoutHeaderGroup: 1
+  StartEnabled: 1
+  Components:
+  - name: Crate (Mesh Renderer)
+    InvertEnabled: 0
+    EnableDelay: 0
+    DisableDelay: 0
+    Component: {fileID: 4966439033834842893}
+  - name: Crate (Box Collider)
+    InvertEnabled: 0
+    EnableDelay: 0
+    DisableDelay: 0
+    Component: {fileID: 4956387030774660574}
 --- !u!114 &-5316913461067256539
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -538,7 +564,7 @@ MonoBehaviour:
   SwitchTransformSpaceWhenParented: 0
   Interpolate: 0
   SlerpPosition: 0
---- !u!114 &5078954791202937250
+--- !u!114 &-8990631762363941885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -547,22 +573,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 2629982952932842826}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d0b25b3f95e5324abc80c09cb29f271, type: 3}
+  m_Script: {fileID: 11500000, guid: ff2c2706c9c8d0c4cbfed69ce3f90ca8, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.Components.ComponentController
+  m_EditorClassIdentifier: Assembly-CSharp::PickableTool
   ShowTopMostFoldoutHeaderGroup: 1
-  StartEnabled: 1
-  Components:
-  - name: Crate (Mesh Renderer)
-    InvertEnabled: 0
-    EnableDelay: 0
-    DisableDelay: 0
-    Component: {fileID: 4966439033834842893}
-  - name: Crate (Box Collider)
-    InvertEnabled: 0
-    EnableDelay: 0
-    DisableDelay: 0
-    Component: {fileID: 4956387030774660574}
+  m_outline: {fileID: 4948312187332645356}
+  m_objectType: 5
+  m_componentController: {fileID: 5078954791202937250}
 --- !u!1 &3583969124467646856
 GameObject:
   m_ObjectHideFlags: 0

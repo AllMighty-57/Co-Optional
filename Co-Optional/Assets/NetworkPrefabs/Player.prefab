@@ -65,9 +65,9 @@ GameObject:
   - component: {fileID: -7792660002155728742}
   - component: {fileID: 3468319319964106718}
   - component: {fileID: 6104520908942253826}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.NetworkObject
-  GlobalObjectIdHash: 217231812
+  GlobalObjectIdHash: 1308035266
   InScenePlacedSourceGlobalObjectIdHash: 0
   m_InScenePlacedDisabledByDefault: 0
   DeferredDespawnTick: 0
@@ -197,6 +197,7 @@ MonoBehaviour:
   m_pickaxeModel: {fileID: 6563576588607738715}
   m_woodModel: {fileID: 2821877509672983411}
   m_stoneModel: {fileID: 1840552705418443600}
+  m_crateModel: {fileID: 8609342898827352313}
 --- !u!114 &3468319319964106718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1042,7 +1043,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2240937754022350067, guid: 5b5436c1bb55d7c47994fad428657b42, type: 3}
       propertyPath: GlobalObjectIdHash
-      value: 4140382450
+      value: 909401308
       objectReference: {fileID: 0}
     - target: {fileID: 2629982952932842826, guid: 5b5436c1bb55d7c47994fad428657b42, type: 3}
       propertyPath: m_Name
@@ -1110,6 +1111,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4956387030774660574, guid: 5b5436c1bb55d7c47994fad428657b42, type: 3}
+    - {fileID: 4948312187332645356, guid: 5b5436c1bb55d7c47994fad428657b42, type: 3}
+    - {fileID: 2240937754022350067, guid: 5b5436c1bb55d7c47994fad428657b42, type: 3}
+    - {fileID: 5078954791202937250, guid: 5b5436c1bb55d7c47994fad428657b42, type: 3}
+    - {fileID: -5316913461067256539, guid: 5b5436c1bb55d7c47994fad428657b42, type: 3}
+    - {fileID: -8990631762363941885, guid: 5b5436c1bb55d7c47994fad428657b42, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
@@ -1117,6 +1123,11 @@ PrefabInstance:
 --- !u!4 &2576415247759412663 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8125707912285669380, guid: 5b5436c1bb55d7c47994fad428657b42, type: 3}
+  m_PrefabInstance: {fileID: 5982210010250724787}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8609342898827352313 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2629982952932842826, guid: 5b5436c1bb55d7c47994fad428657b42, type: 3}
   m_PrefabInstance: {fileID: 5982210010250724787}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6329787217988677130

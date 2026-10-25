@@ -122,7 +122,7 @@ GameObject:
   - component: {fileID: 5703872060544347789}
   - component: {fileID: 6931098197387978006}
   - component: {fileID: 2667441075171585629}
-  - component: {fileID: 5069515454702706735}
+  - component: {fileID: 6711327557283754411}
   m_Layer: 0
   m_Name: ButtonPlatform
   m_TagString: Untagged
@@ -140,7 +140,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -10.825, y: 0.25, z: 11.411}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.1532, y: 1.1532, z: 1.1532}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 8055494009264854117}
@@ -196,7 +196,7 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
---- !u!114 &5069515454702706735
+--- !u!114 &6711327557283754411
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -205,12 +205,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 3426199854418779125}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4d0b25b3f95e5324abc80c09cb29f271, type: 3}
+  m_Script: {fileID: 11500000, guid: 3c7c43f9df27fb0458f3dbdd32294112, type: 3}
   m_Name: 
-  m_EditorClassIdentifier: Unity.Netcode.Runtime::Unity.Netcode.Components.ComponentController
-  ShowTopMostFoldoutHeaderGroup: 1
-  StartEnabled: 1
-  Components: []
+  m_EditorClassIdentifier: Assembly-CSharp::ButtonToggle
+  m_buttonNormal: {fileID: 4035706013500119644}
+  m_buttonDepressed: {fileID: 6199787716662581910}
+  wallObject: {fileID: 0}
 --- !u!1 &5833301743008112028
 GameObject:
   m_ObjectHideFlags: 0

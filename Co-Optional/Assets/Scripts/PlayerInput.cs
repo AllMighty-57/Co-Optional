@@ -9,7 +9,8 @@ public class PlayerInput : NetworkBehaviour
     private InputActionReference m_moveActionReference; 
     public Vector2 MoveInput { get; private set; } 
     public event Action OnPickupPressed;
-    public event Action OnInteractPressed;
+    public event Action OnInteractPressed; 
+    public event Action OnDropPressed;
 
     private Vector2 m_rawInput;
     [SerializeField]
@@ -30,6 +31,11 @@ public class PlayerInput : NetworkBehaviour
         {
             OnPickupPressed?.Invoke();
         } 
+        if(Keyboard.current.qKey.wasPressedThisFrame)
+        {
+            OnDropPressed?.Invoke();
+        }
+
         if(Mouse.current.leftButton.wasPressedThisFrame)
         {
             OnInteractPressed?.Invoke();

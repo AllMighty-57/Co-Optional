@@ -12,7 +12,15 @@ public class GameManager : NetworkBehaviour
     private GameObject m_playerPrefab;
 
     [SerializeField]
-    private List<ResourcePallet> m_pallets;
+    private EndGoalReached m_endGoal1;
+    [SerializeField]
+    private EndGoalReached m_endGoal2;
+
+    private bool m_winTriggered;
+
+
+    //[SerializeField]
+    //private List<ResourcePallet> m_pallets;
 
     private void Start()
     {
@@ -30,25 +38,25 @@ public class GameManager : NetworkBehaviour
         if (!IsServer)
             return;
         NetworkManager.OnClientConnectedCallback += SpawnPlayer;
-        NetworkManager.SceneManager.OnLoadEventCompleted += HandleSceneLoadCompleted; 
+        NetworkManager.SceneManager.OnLoadEventCompleted += HandleSceneLoadCompleted;
 
-        foreach (ResourcePallet pallet in m_pallets)
-        {
-            pallet.OnPalletFilled += CheckWinCondition;
-        }
+        m_endGoal1.OnGoalStateChanged += CheckWinCondition;
+        m_endGoal2.OnGoalStateChanged += CheckWinCondition;
+
     }
 
     private void CheckWinCondition()
     {
-        int points = 0;
-        foreach (ResourcePallet pallet in m_pallets)
+        if (!IsServer || m_winTriggered)
+            return;
+
+        if (m_endGoal1.IsGoalReached && m_endGoal2.IsGoalReached)
         {
-            points += pallet.StackedResoruces;
-        } 
-        if(points >= m_pallets.Count * 3)
-        {
+            m_winTriggered = true;
+
             NetworkManager.SceneManager.LoadScene(
-                SceneManager.GetActiveScene().name, LoadSceneMode.Single);
+                SceneManager.GetActiveScene().name,
+                LoadSceneMode.Single);
         }
     }
 
@@ -66,13 +74,13 @@ public class GameManager : NetworkBehaviour
         if (IsServer)
         {
             NetworkManager.OnClientConnectedCallback -= SpawnPlayer; 
-            NetworkManager.SceneManager.OnLoadEventCompleted -= HandleSceneLoadCompleted; 
-            foreach (ResourcePallet pallet in m_pallets)
-            {
-                pallet.OnPalletFilled -= CheckWinCondition;
-            }
+            NetworkManager.SceneManager.OnLoadEventCompleted -= HandleSceneLoadCompleted;
+
+            m_endGoal1.OnGoalStateChanged -= CheckWinCondition;
+            m_endGoal2.OnGoalStateChanged -= CheckWinCondition;
+
         }
-        
+
         base.OnNetworkDespawn();
     }
 
