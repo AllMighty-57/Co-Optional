@@ -225,7 +225,12 @@ public class PlayerController : NetworkBehaviour
             {
                 if (target.TryGetComponent(out PickableTool pickableItem))
                 {
-                    pickableItem.Drop(transform.position);
+                    float dropDistance = 1.5f;
+
+                    Vector3 dropPosition =
+                        transform.position + transform.forward * dropDistance;
+
+                    pickableItem.Drop(dropPosition);
                 }
             }
         }

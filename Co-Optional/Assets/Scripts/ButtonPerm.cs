@@ -27,6 +27,6 @@ public class ButtonPerm : MonoBehaviour
         m_buttonNormal.SetEnabled(false);
 
         // Prevent the normal button from changing the door state.
-        m_toggleButton.enabled = false;
+        m_toggleButton.permActivated = activated;
     }
 }

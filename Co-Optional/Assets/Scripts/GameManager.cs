@@ -3,6 +3,7 @@ using Unity.Netcode;
 using System;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 
 public class GameManager : NetworkBehaviour
 {
@@ -16,11 +17,14 @@ public class GameManager : NetworkBehaviour
     [SerializeField]
     private EndGoalReached m_endGoal2;
 
-    private bool m_winTriggered;
+    [SerializeField]
+    private FallenOff HasFallenOff;
 
+    [SerializeField]
+    private GameObject m_permButton;
 
-    //[SerializeField]
-    //private List<ResourcePallet> m_pallets;
+    private bool m_winTriggered; 
+    private bool potentialSoftlock;
 
     private void Start()
     {
@@ -29,7 +33,7 @@ public class GameManager : NetworkBehaviour
             m_multiplayerUI.OnStartHost += StartHost;
             m_multiplayerUI.OnStartClient += StartClient;
             m_multiplayerUI.OnDiconnectClient += DisconnectClient;
-        }
+        } 
     } 
 
     override public void OnNetworkSpawn()
@@ -42,7 +46,20 @@ public class GameManager : NetworkBehaviour
 
         m_endGoal1.OnGoalStateChanged += CheckWinCondition;
         m_endGoal2.OnGoalStateChanged += CheckWinCondition;
+        HasFallenOff.OnFellStateChanged += AntiSoftlockProtocol;
 
+    } 
+
+    private void AntiSoftlockProtocol()
+    { 
+        if (!IsServer || potentialSoftlock) 
+            return;
+        
+        if (HasFallenOff.HasFallen)
+        {
+            potentialSoftlock = true;
+            m_permButton.gameObject.SetActive(true);
+        }
     }
 
     private void CheckWinCondition()
@@ -78,6 +95,7 @@ public class GameManager : NetworkBehaviour
 
             m_endGoal1.OnGoalStateChanged -= CheckWinCondition;
             m_endGoal2.OnGoalStateChanged -= CheckWinCondition;
+            HasFallenOff.OnFellStateChanged -= AntiSoftlockProtocol;
 
         }
 

@@ -17,6 +17,17 @@ public class SelectionOutline : MonoBehaviour
 
     public void ToggleOutline(bool isHighlighted)
     {
-        gameObject.layer = isHighlighted ? m_highlightLayer : m_defaultLayer;
+        int layer = isHighlighted ? m_highlightLayer : m_defaultLayer;
+        SetLayerRecursively(transform, layer);
+    }
+
+    private void SetLayerRecursively(Transform current, int layer)
+    {
+        current.gameObject.layer = layer;
+
+        foreach (Transform child in current)
+        {
+            SetLayerRecursively(child, layer);
+        }
     }
 }
