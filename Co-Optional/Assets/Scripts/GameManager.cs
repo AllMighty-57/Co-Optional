@@ -23,8 +23,13 @@ public class GameManager : NetworkBehaviour
     [SerializeField]
     private GameObject m_permButton;
 
+    [SerializeField]
+    private Transform m_permButtonSpawn;
+
     private bool m_winTriggered; 
     private bool potentialSoftlock;
+    
+    
 
     private void Start()
     {
@@ -58,7 +63,10 @@ public class GameManager : NetworkBehaviour
         if (HasFallenOff.HasFallen)
         {
             potentialSoftlock = true;
-            m_permButton.gameObject.SetActive(true);
+            m_permButton.transform.SetPositionAndRotation(
+                m_permButtonSpawn.position,
+                m_permButtonSpawn.rotation
+            );
         }
     }
 
