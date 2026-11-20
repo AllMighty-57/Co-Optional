@@ -561,7 +561,7 @@ MonoBehaviour:
   m_outline: {fileID: 4948312187332645356}
   m_objectType: 5
   m_componentController: {fileID: 5078954791202937250}
-  m_rigidbody: {fileID: 0}
+  m_rigidbody: {fileID: 871588983620114752}
 --- !u!114 &7252129917488248080
 MonoBehaviour:
   m_ObjectHideFlags: 0

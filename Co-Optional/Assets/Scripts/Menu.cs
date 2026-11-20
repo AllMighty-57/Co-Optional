@@ -144,7 +144,14 @@ public class Menu : MonoBehaviour
     {
         await SetAuthenticatedPlayerNameAsync();
 
-        session = await MultiplayerService.Instance.JoinSessionByCodeAsync(joinCode);
+        // Player-name synchronization must also be enabled on the joining
+        // client's options, not only when the host creates the session.
+        var joinOptions = new JoinSessionOptions()
+            .WithPlayerName(VisibilityPropertyOptions.Member);
+
+        session = await MultiplayerService.Instance.JoinSessionByCodeAsync(
+            joinCode,
+            joinOptions);
         SubscribeToSessionEvents();
         SubscribeToPlayerEvents();
         SetScreen(lobbyScreen);
