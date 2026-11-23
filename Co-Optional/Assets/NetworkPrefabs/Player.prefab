@@ -61,9 +61,9 @@ GameObject:
   - component: {fileID: 4841560274559653093}
   - component: {fileID: 6895321537121219383}
   - component: {fileID: 2457622473215480138}
+  - component: {fileID: 3468319319964106718}
   - component: {fileID: -3826422096971699930}
   - component: {fileID: -7792660002155728742}
-  - component: {fileID: 3468319319964106718}
   - component: {fileID: 6104520908942253826}
   - component: {fileID: 3781084703355689621}
   m_Layer: 8
@@ -161,44 +161,6 @@ MonoBehaviour:
   AutoObjectParentSync: 1
   SyncOwnerTransformWhenParented: 1
   AllowOwnerToParent: 0
---- !u!114 &-3826422096971699930
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855797244298458106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 443df6d6723e9a34c84e8a416cbf0ad9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
-  ShowTopMostFoldoutHeaderGroup: 1
-  m_moveActionReference: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
-  m_smoothTime: 0.1
---- !u!114 &-7792660002155728742
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1855797244298458106}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e5f1fb143859ed64d9a7614462ec960c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
-  ShowTopMostFoldoutHeaderGroup: 1
-  m_playerInput: {fileID: -3826422096971699930}
-  m_agentMover: {fileID: 6895321537121219383}
-  m_interactionDetector: {fileID: 6935329437981713544}
-  m_animator: {fileID: 637217615066948756}
-  m_animationEvents: {fileID: 5516115944685011280}
-  m_axeModel: {fileID: 7633996361503830611}
-  m_pickaxeModel: {fileID: 6563576588607738715}
-  m_woodModel: {fileID: 2821877509672983411}
-  m_stoneModel: {fileID: 1840552705418443600}
-  m_crateModel: {fileID: 8609342898827352313}
 --- !u!114 &3468319319964106718
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -245,6 +207,44 @@ MonoBehaviour:
   SwitchTransformSpaceWhenParented: 0
   Interpolate: 1
   SlerpPosition: 0
+--- !u!114 &-3826422096971699930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855797244298458106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 443df6d6723e9a34c84e8a416cbf0ad9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerInput
+  ShowTopMostFoldoutHeaderGroup: 1
+  m_moveActionReference: {fileID: -1680190386980627800, guid: 052faaac586de48259a63d0c4782560b, type: 3}
+  m_smoothTime: 0.1
+--- !u!114 &-7792660002155728742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1855797244298458106}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5f1fb143859ed64d9a7614462ec960c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::PlayerController
+  ShowTopMostFoldoutHeaderGroup: 1
+  m_playerInput: {fileID: -3826422096971699930}
+  m_agentMover: {fileID: 6895321537121219383}
+  m_interactionDetector: {fileID: 6935329437981713544}
+  m_animator: {fileID: 637217615066948756}
+  m_animationEvents: {fileID: 5516115944685011280}
+  m_axeModel: {fileID: 7633996361503830611}
+  m_pickaxeModel: {fileID: 6563576588607738715}
+  m_woodModel: {fileID: 2821877509672983411}
+  m_stoneModel: {fileID: 1840552705418443600}
+  m_crateModel: {fileID: 8609342898827352313}
 --- !u!114 &6104520908942253826
 MonoBehaviour:
   m_ObjectHideFlags: 0
