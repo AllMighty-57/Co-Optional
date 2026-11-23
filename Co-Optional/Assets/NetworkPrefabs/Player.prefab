@@ -258,6 +258,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CameraFollow
   ShowTopMostFoldoutHeaderGroup: 1
+  mouseSensitivity: 0.5
+  minPitch: -30
+  maxPitch: 70
+  lookTargetOffset: {x: 0, y: 1, z: 0}
 --- !u!114 &3781084703355689621
 MonoBehaviour:
   m_ObjectHideFlags: 0

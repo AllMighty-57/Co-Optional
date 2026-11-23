@@ -21,15 +21,10 @@ public class PlayerController : NetworkBehaviour
     [SerializeField]
     private GameObject m_axeModel, m_pickaxeModel, m_woodModel, m_stoneModel, m_crateModel;
 
-    private ResourceSpawner m_resourceSpawner;
 
     private NetworkVariable<ulong> m_heldNetworkObjectId = new(ulong.MaxValue);
     private NetworkVariable<ObjectType> m_heldObjectType = new(ObjectType.None);
 
-    private void Awake()
-    {
-        m_resourceSpawner = FindAnyObjectByType<ResourceSpawner>();
-    }
 
     private void OnEnable()
     {
@@ -96,21 +91,9 @@ public class PlayerController : NetworkBehaviour
         {
             m_animationEvents.OnInteract += HandleInteractAction;
             m_animationEvents.OnAnimationDone += HandleAnimationDone;
-            m_animationEvents.OnChop += HandleChopAction;
         }
     }
 
-    private void HandleChopAction()
-    {
-        if(m_heldObjectType.Value is ObjectType.Axe or ObjectType.PickAxe)
-        {
-            if(m_interactionDetector.ClosestInteractable is ResourceNode)
-            {
-                RequestResourceNodeInteractionServerRpc(
-                    m_interactionDetector.ClosestInteractable.NetworkObject.NetworkObjectId);
-            }
-        }
-    }
 
     [Rpc(SendTo.Server)]
     private void RequestResourceNodeInteractionServerRpc(ulong networkObjectId)
@@ -118,11 +101,6 @@ public class PlayerController : NetworkBehaviour
         if (!NetworkManager.SpawnManager.SpawnedObjects
                .TryGetValue(networkObjectId, out NetworkObject target))
             return;
-
-        if (!target.TryGetComponent(out ResourceNode node))
-            return;
-
-        node.Harvest(m_heldObjectType.Value);
     }
 
     private void HandleItemOnJoin()
@@ -152,11 +130,6 @@ public class PlayerController : NetworkBehaviour
             RequestPickUpServerRpc(
                 m_interactionDetector.ClosestInteractable.NetworkObject.NetworkObjectId);
         }
-        if (m_interactionDetector.ClosestInteractable is ResourcePallet)
-        {
-            RequestGiveItemServerRpc(
-                m_interactionDetector.ClosestInteractable.NetworkObject.NetworkObjectId);
-        }
     }
     
     [Rpc(SendTo.Server)]
@@ -166,15 +139,6 @@ public class PlayerController : NetworkBehaviour
             .TryGetValue(networkObjectId, out NetworkObject target))
         {
             return;
-        }
-        if (!target.TryGetComponent(out ResourcePallet resourcePallet))
-        {
-            return;
-        } 
-        if(resourcePallet.Interact(m_heldObjectType.Value))
-        {
-            m_heldObjectType.Value = ObjectType.None;
-            m_heldNetworkObjectId.Value = ulong.MaxValue;
         }
     }
 
@@ -234,10 +198,6 @@ public class PlayerController : NetworkBehaviour
                 }
             }
         }
-        else
-        {
-            m_resourceSpawner.SpawnResource(m_heldObjectType.Value, transform.position);
-        }
 
             m_heldObjectType.Value = ObjectType.None;
         m_heldNetworkObjectId.Value = ulong.MaxValue;
@@ -254,7 +214,6 @@ public class PlayerController : NetworkBehaviour
         { 
             m_animationEvents.OnInteract -= HandleInteractAction;
             m_animationEvents.OnAnimationDone -= HandleAnimationDone;
-            m_animationEvents.OnChop -= HandleChopAction;
         }
         base.OnNetworkDespawn();
     }
